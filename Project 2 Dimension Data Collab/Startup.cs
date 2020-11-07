@@ -71,6 +71,11 @@ namespace Test_Database
                     name: "data",
                     pattern: "{controller=Cmpg323Project2Dataset}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
+
+                endpoints.MapControllerRoute(
+                    name: "data",
+                    pattern: "dataChart/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }

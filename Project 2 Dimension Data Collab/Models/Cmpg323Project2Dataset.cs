@@ -8,7 +8,6 @@ namespace Test_Database.Models
     public partial class Cmpg323Project2Dataset
     {
 
-        
         public string Age { get; set; }
         public string Attrition { get; set; }
         [Display(Name ="Business Travel")]

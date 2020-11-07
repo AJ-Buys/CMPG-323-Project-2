@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +13,7 @@ using Test_Database.Models;
 
 namespace Test_Database.Controllers
 {
+    [Authorize]
     public class Cmpg323Project2DatasetController : Controller
     {
         private readonly Project2Context _context;
@@ -46,7 +49,11 @@ namespace Test_Database.Controllers
             return View(cmpg323Project2Dataset);
         }
 
+
+
         // GET: Cmpg323Project2Dataset/Create
+
+        [Authorize(Roles ="admin, manager")]
         public IActionResult Create()
         {
             return View();
@@ -57,6 +64,7 @@ namespace Test_Database.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin, manager")]
         public async Task<IActionResult> Create([Bind("Age,Attrition,BusinessTravel,DailyRate,Department,DistanceFromHome,Education,EducationField,EmployeeCount,EmployeeNumber,EnvironmentSatisfaction,Gender,HourlyRate,JobInvolvement,JobLevel,JobRole,JobSatisfaction,MaritalStatus,MonthlyIncome,MonthlyRate,NumCompaniesWorked,Over18,OverTime,PercentSalaryHike,PerformanceRating,RelationshipSatisfaction,StandardHours,StockOptionLevel,TotalWorkingYears,TrainingTimesLastYear,WorkLifeBalance,YearsAtCompany,YearsInCurrentRole,YearsSinceLastPromotion,YearsWithCurrManager")] Cmpg323Project2Dataset cmpg323Project2Dataset)
         {
             if (ModelState.IsValid)
@@ -69,6 +77,7 @@ namespace Test_Database.Controllers
         }
 
         // GET: Cmpg323Project2Dataset/Edit/5
+        [Authorize(Roles = "admin, manager")]
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -89,6 +98,7 @@ namespace Test_Database.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin, manager")]
         public async Task<IActionResult> Edit(string id, [Bind("Age,Attrition,BusinessTravel,DailyRate,Department,DistanceFromHome,Education,EducationField,EmployeeCount,EmployeeNumber,EnvironmentSatisfaction,Gender,HourlyRate,JobInvolvement,JobLevel,JobRole,JobSatisfaction,MaritalStatus,MonthlyIncome,MonthlyRate,NumCompaniesWorked,Over18,OverTime,PercentSalaryHike,PerformanceRating,RelationshipSatisfaction,StandardHours,StockOptionLevel,TotalWorkingYears,TrainingTimesLastYear,WorkLifeBalance,YearsAtCompany,YearsInCurrentRole,YearsSinceLastPromotion,YearsWithCurrManager")] Cmpg323Project2Dataset cmpg323Project2Dataset)
         {
             if (id != cmpg323Project2Dataset.EmployeeNumber)
@@ -120,6 +130,7 @@ namespace Test_Database.Controllers
         }
 
         // GET: Cmpg323Project2Dataset/Delete/5
+        [Authorize(Roles = "admin, manager")]
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)

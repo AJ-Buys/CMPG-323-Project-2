@@ -9194,11 +9194,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ca$hville\\source\\repos\\Project 2 Dimension Data Collab\\Project 2(Dimension Data Collab).csproj",
+      "projectUniqueName": "G:\\Universiteit\\Github\\CMPG-323-Project-2\\Project 2 Dimension Data Collab\\Project 2(Dimension Data Collab).csproj",
       "projectName": "Project 2(Dimension Data Collab)",
-      "projectPath": "C:\\Users\\Ca$hville\\source\\repos\\Project 2 Dimension Data Collab\\Project 2(Dimension Data Collab).csproj",
+      "projectPath": "G:\\Universiteit\\Github\\CMPG-323-Project-2\\Project 2 Dimension Data Collab\\Project 2(Dimension Data Collab).csproj",
       "packagesPath": "C:\\Users\\Ca$hville\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ca$hville\\source\\repos\\Project 2 Dimension Data Collab\\obj\\",
+      "outputPath": "G:\\Universiteit\\Github\\CMPG-323-Project-2\\Project 2 Dimension Data Collab\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ca$hville\\AppData\\Roaming\\NuGet\\NuGet.Config",
