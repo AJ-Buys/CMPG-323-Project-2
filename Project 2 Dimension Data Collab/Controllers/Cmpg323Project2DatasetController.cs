@@ -13,7 +13,7 @@ using Test_Database.Models;
 
 namespace Test_Database.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class Cmpg323Project2DatasetController : Controller
     {
         private readonly Project2Context _context;
