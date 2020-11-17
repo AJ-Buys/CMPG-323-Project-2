@@ -7,14 +7,17 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using Test_Database.Data;
 using Test_Database.Models;
 
 
 namespace Test_Database.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class Cmpg323Project2DatasetController : Controller
+
+        
     {
         private readonly Project2Context _context;
 
@@ -52,19 +55,16 @@ namespace Test_Database.Controllers
 
 
         // GET: Cmpg323Project2Dataset/Create
-
-        [Authorize(Roles ="admin, manager")]
+        [Authorize(Roles ="Admin")]
         public IActionResult Create()
         {
             return View();
         }
 
         // POST: Cmpg323Project2Dataset/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "admin, manager")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("Age,Attrition,BusinessTravel,DailyRate,Department,DistanceFromHome,Education,EducationField,EmployeeCount,EmployeeNumber,EnvironmentSatisfaction,Gender,HourlyRate,JobInvolvement,JobLevel,JobRole,JobSatisfaction,MaritalStatus,MonthlyIncome,MonthlyRate,NumCompaniesWorked,Over18,OverTime,PercentSalaryHike,PerformanceRating,RelationshipSatisfaction,StandardHours,StockOptionLevel,TotalWorkingYears,TrainingTimesLastYear,WorkLifeBalance,YearsAtCompany,YearsInCurrentRole,YearsSinceLastPromotion,YearsWithCurrManager")] Cmpg323Project2Dataset cmpg323Project2Dataset)
         {
             if (ModelState.IsValid)
@@ -77,7 +77,7 @@ namespace Test_Database.Controllers
         }
 
         // GET: Cmpg323Project2Dataset/Edit/5
-        [Authorize(Roles = "admin, manager")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -89,7 +89,14 @@ namespace Test_Database.Controllers
             if (cmpg323Project2Dataset == null)
             {
                 return NotFound();
+
             }
+
+            var personID = (_context.AspNetUsers.Where(x => x.Email == User.Identity.Name).Select(x => x.Id));
+            var person = personID.ToList()[0];
+            var ISAdmin = _context.AspNetUserRoles.Where(x => x.UserId == person).Select(x => x.RoleId);
+            ViewBag.Admin = JsonConvert.SerializeObject(ISAdmin);
+
             return View(cmpg323Project2Dataset);
         }
 
@@ -98,7 +105,7 @@ namespace Test_Database.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "admin, manager")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(string id, [Bind("Age,Attrition,BusinessTravel,DailyRate,Department,DistanceFromHome,Education,EducationField,EmployeeCount,EmployeeNumber,EnvironmentSatisfaction,Gender,HourlyRate,JobInvolvement,JobLevel,JobRole,JobSatisfaction,MaritalStatus,MonthlyIncome,MonthlyRate,NumCompaniesWorked,Over18,OverTime,PercentSalaryHike,PerformanceRating,RelationshipSatisfaction,StandardHours,StockOptionLevel,TotalWorkingYears,TrainingTimesLastYear,WorkLifeBalance,YearsAtCompany,YearsInCurrentRole,YearsSinceLastPromotion,YearsWithCurrManager")] Cmpg323Project2Dataset cmpg323Project2Dataset)
         {
             if (id != cmpg323Project2Dataset.EmployeeNumber)
@@ -130,7 +137,7 @@ namespace Test_Database.Controllers
         }
 
         // GET: Cmpg323Project2Dataset/Delete/5
-        [Authorize(Roles = "admin, manager")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -149,6 +156,7 @@ namespace Test_Database.Controllers
         }
 
         // POST: Cmpg323Project2Dataset/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)

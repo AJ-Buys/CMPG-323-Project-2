@@ -1,13 +1,33 @@
 ﻿
 
-<h1>Chart2</h1>
 
-<canvas>
-</canvas>
-
+<div>
+    <h1>Job Roles</h1>
+    <canvas id="role"></canvas>
+</div>
 
 <script>
 
+    var can = document.getElementById("role");
+    var label = @ViewBag.label;
+    var value = @ViewBag.total;
+
+    var roleC = new Chart(can, {
+        type: "bar",
+        data: {
+            labels: label,
+            datasets: [{
+                data: value,
+                backgroundColor: "#000"
+            }]
+        },
+        options: {
+            title: {
+                text: "Various job roles",
+                display :true
+            }
+        }
+    });
 
 
 </script>

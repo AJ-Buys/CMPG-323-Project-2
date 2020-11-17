@@ -9,7 +9,7 @@ using Test_Database.Data;
 
 namespace Test_Database.Controllers
 {
-    
+    [Authorize]
     public class dataChartController : Controller
     {
 
@@ -28,11 +28,28 @@ namespace Test_Database.Controllers
 
         public IActionResult Dashboard()
         {
+            #region Chart 1
             var x = _context.Cmpg323Project2Dataset.Where(x => x.Gender == "Male").Count();
             var y = _context.Cmpg323Project2Dataset.Where(y => y.Gender == "Female").Count();
+            var z = _context.Cmpg323Project2Dataset.Select(z => z.JobRole).Distinct().ToList();
 
             ViewBag.male = JsonConvert.SerializeObject(x);
             ViewBag.female = JsonConvert.SerializeObject(y);
+            #endregion
+
+
+
+            #region Chart 2
+            var list = new List<int>();
+            foreach (var item in z)
+            {
+                list.Add(_context.Cmpg323Project2Dataset.Where(z => z.JobRole == item).Count());
+            }
+            ViewBag.label = JsonConvert.SerializeObject(z);
+            ViewBag.total = JsonConvert.SerializeObject(list);
+
+            #endregion
+
 
             return View();
 

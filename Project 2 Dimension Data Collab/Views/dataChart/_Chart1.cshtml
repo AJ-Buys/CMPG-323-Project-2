@@ -1,28 +1,23 @@
 ﻿
-
-
-
 <div>
-    <h1>Test</h1>
-    <canvas id="chart"></canvas>
+    <h1>Gender balance</h1>
+    <canvas id="gender"></canvas>
 </div>
 
 <script>
-    //var x = Html.Raw.ViewBag//
 
-
-
-    var can = document.getElementById("chart");
+    var can = document.getElementById("gender");
     var male = @ViewBag.male;
     var female = @ViewBag.female;
 
-    var test = new Chart(can, {
+    var genderC = new Chart(can, {
         type: "doughnut",
         data: {
             labels: ["Male", "Female"],
             datasets: [{
                 data: [male, female],
-                backgroundColor: ["#333", "#000"]
+                backgroundColor: ["#f9f4f7", "#f8f2f7"],
+                borderColor: ["#f9f4f7", "#f8f2f7"]
             }]
         },
         options: {
