@@ -2,7 +2,7 @@
 
 
 <div>
-    <h1>Job Roles</h1>
+    <h2>Job Roles</h2>
     <canvas id="role"></canvas>
 </div>
 
@@ -10,15 +10,19 @@
 
     var can = document.getElementById("role");
     var label = @ViewBag.label;
-    var value = @ViewBag.total;
+    var value = @ViewBag.value;
+
+    
 
     var roleC = new Chart(can, {
         type: "bar",
         data: {
             labels: label,
+            //labels: ["Healthcare Representative", "Human Resources", "Laboratory Technician", "Manager", "Manufacturing Director", "Research Director", "Research Scientist", "FemaSales Executivele", "Sales Representative"],
             datasets: [{
-                data: value,
-                backgroundColor: "#000"
+                //data: value,
+                backgroundColor: ["#FF0000", "#FF9300", "#FFFB00", "#97FF00", "#00FFC5", "#0049FF", "#B200FF", "#FF00D4", "#000000"],
+                borderColor: ["#FF0000", "#FF9300", "#FFFB00", "#97FF00", "#00FFC5", "#0049FF", "#B200FF", "#FF00D4", "#000000"]
             }]
         },
         options: {

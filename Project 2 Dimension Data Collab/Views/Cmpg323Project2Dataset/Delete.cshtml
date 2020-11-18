@@ -4,7 +4,7 @@
     ViewData["Title"] = "Delete";
 }
 
-@if (ViewBag.Admin.Contains("Admin"))
+@if (User.IsInRole("Admin"))
 {
     <h1>Delete record</h1>
 

@@ -4,7 +4,7 @@
     ViewData["Title"] = "Edit";
 }
 
-@if (ViewBag.Admin.Contains("Admin"))
+@if (User.IsInRole("Admin"))
 {
     <h1>Edit information</h1>
 

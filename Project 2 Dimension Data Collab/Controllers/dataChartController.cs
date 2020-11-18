@@ -31,7 +31,7 @@ namespace Test_Database.Controllers
             #region Chart 1
             var x = _context.Cmpg323Project2Dataset.Where(x => x.Gender == "Male").Count();
             var y = _context.Cmpg323Project2Dataset.Where(y => y.Gender == "Female").Count();
-            var z = _context.Cmpg323Project2Dataset.Select(z => z.JobRole).Distinct().ToList();
+            
 
             ViewBag.male = JsonConvert.SerializeObject(x);
             ViewBag.female = JsonConvert.SerializeObject(y);
@@ -40,14 +40,15 @@ namespace Test_Database.Controllers
 
 
             #region Chart 2
+            var z = _context.Cmpg323Project2Dataset.Select(z => z.JobRole).Distinct().ToList();
             var list = new List<int>();
+
             foreach (var item in z)
             {
                 list.Add(_context.Cmpg323Project2Dataset.Where(z => z.JobRole == item).Count());
             }
             ViewBag.label = JsonConvert.SerializeObject(z);
-            ViewBag.total = JsonConvert.SerializeObject(list);
-
+            ViewBag.value = JsonConvert.SerializeObject(list);
             #endregion
 
 
