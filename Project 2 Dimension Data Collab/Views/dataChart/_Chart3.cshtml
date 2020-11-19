@@ -1,0 +1,27 @@
+﻿<div>
+    <h2>Some departments</h2>
+    <canvas id="department"></canvas>
+</div>
+
+<script>
+
+    var can = document.getElementById("department");
+
+    var HumanRe = @ViewBag.HumanRe;
+    var ResDev = @ViewBag.ResDev;
+    var Sales = @ViewBag.Sales;
+
+    var genderC = new Chart(can, {
+        type: "doughnut",
+        data: {
+            labels: ['Human Resources', 'Research & Development', 'Sales'],
+            datasets: [{
+                data: [HumanRe, ResDev, Sales],
+                backgroundColor: ["#44ee69", "#60970f", "#35e6e1"],
+                borderColor: ["#44ee69", "#60970f", "#35e6e1"]
+
+            }]
+        },
+    });
+
+</script>

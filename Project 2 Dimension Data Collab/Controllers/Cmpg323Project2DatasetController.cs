@@ -55,7 +55,8 @@ namespace Test_Database.Controllers
 
 
         // GET: Cmpg323Project2Dataset/Create
-        [Authorize(Roles ="Admin")]
+
+        //[Authorize(Roles ="Admin")]
         public IActionResult Create()
         {
             return View();
@@ -64,7 +65,8 @@ namespace Test_Database.Controllers
         // POST: Cmpg323Project2Dataset/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")]
+
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("Age,Attrition,BusinessTravel,DailyRate,Department,DistanceFromHome,Education,EducationField,EmployeeCount,EmployeeNumber,EnvironmentSatisfaction,Gender,HourlyRate,JobInvolvement,JobLevel,JobRole,JobSatisfaction,MaritalStatus,MonthlyIncome,MonthlyRate,NumCompaniesWorked,Over18,OverTime,PercentSalaryHike,PerformanceRating,RelationshipSatisfaction,StandardHours,StockOptionLevel,TotalWorkingYears,TrainingTimesLastYear,WorkLifeBalance,YearsAtCompany,YearsInCurrentRole,YearsSinceLastPromotion,YearsWithCurrManager")] Cmpg323Project2Dataset cmpg323Project2Dataset)
         {
             if (ModelState.IsValid)
@@ -77,7 +79,8 @@ namespace Test_Database.Controllers
         }
 
         // GET: Cmpg323Project2Dataset/Edit/5
-        [Authorize(Roles = "Admin")]
+
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -105,7 +108,8 @@ namespace Test_Database.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")]
+
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(string id, [Bind("Age,Attrition,BusinessTravel,DailyRate,Department,DistanceFromHome,Education,EducationField,EmployeeCount,EmployeeNumber,EnvironmentSatisfaction,Gender,HourlyRate,JobInvolvement,JobLevel,JobRole,JobSatisfaction,MaritalStatus,MonthlyIncome,MonthlyRate,NumCompaniesWorked,Over18,OverTime,PercentSalaryHike,PerformanceRating,RelationshipSatisfaction,StandardHours,StockOptionLevel,TotalWorkingYears,TrainingTimesLastYear,WorkLifeBalance,YearsAtCompany,YearsInCurrentRole,YearsSinceLastPromotion,YearsWithCurrManager")] Cmpg323Project2Dataset cmpg323Project2Dataset)
         {
             if (id != cmpg323Project2Dataset.EmployeeNumber)
@@ -137,7 +141,8 @@ namespace Test_Database.Controllers
         }
 
         // GET: Cmpg323Project2Dataset/Delete/5
-        [Authorize(Roles = "Admin")]
+
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -156,7 +161,8 @@ namespace Test_Database.Controllers
         }
 
         // POST: Cmpg323Project2Dataset/Delete/5
-        [Authorize(Roles = "Admin")]
+
+        //[Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)

@@ -226,14 +226,21 @@
             <td>
                 @Html.DisplayFor(modelItem => item.YearsWithCurrManager)
             </td>
-            
-            
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.EmployeeNumber">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.EmployeeNumber">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.EmployeeNumber">Delete</a>
-                </td>
-            
+
+            @*if (User.IsInRole("Admin"))
+        {*@
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EmployeeNumber">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.EmployeeNumber">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.EmployeeNumber">Delete</a>|
+            </td>
+            @*)else
+                {
+             <td>
+                 <a asp-action="Details" asp-route-id="@item.EmployeeNumber">Details</a> 
+             </td>
+
+            }*@
         </tr>
         }
     </tbody>

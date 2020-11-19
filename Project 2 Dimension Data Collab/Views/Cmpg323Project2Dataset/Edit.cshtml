@@ -4,8 +4,8 @@
     ViewData["Title"] = "Edit";
 }
 
-@if (User.IsInRole("Admin"))
-{
+@*if (User.IsInRole("Admin"))
+{*@
     <h1>Edit information</h1>
 
     <h4>Cmpg323Project2Dataset</h4>
@@ -196,12 +196,13 @@
         <a asp-action="Index">Back to List</a>
     </div>
 
-}
+@*}
 else
 {
     <h1>You do not have access to this function!</h1>
     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
 }
+*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

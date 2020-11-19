@@ -574,7 +574,6 @@ G:\Universiteit\Github\CMPG-323-Project-2\Project 2 Dimension Data Collab\obj\De
 G:\Universiteit\Github\CMPG-323-Project-2\Project 2 Dimension Data Collab\bin\Debug\netcoreapp3.1\package-lock.json
 G:\Universiteit\Github\CMPG-323-Project-2\Project 2 Dimension Data Collab\obj\Debug\netcoreapp3.1\Project 2(Dimension Data Collab).csprojAssemblyReference.cache
 G:\Universiteit\Github\CMPG-323-Project-2\Project 2 Dimension Data Collab\obj\Debug\netcoreapp3.1\Razor\Views\dataChart\Dashboard.cshtml.g.cs
-G:\Universiteit\Github\CMPG-323-Project-2\Project 2 Dimension Data Collab\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ChartLayout.cshtml.g.cs
 G:\Universiteit\Github\CMPG-323-Project-2\Project 2 Dimension Data Collab\obj\Debug\netcoreapp3.1\Razor\Views\dataChart\_Chart1.cshtml.g.cs
 G:\Universiteit\Github\CMPG-323-Project-2\Project 2 Dimension Data Collab\obj\Debug\netcoreapp3.1\Razor\Views\dataChart\_Chart2.cshtml.g.cs
 G:\Universiteit\Github\CMPG-323-Project-2\Project 2 Dimension Data Collab\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\AccessDenied.cshtml.g.cs
@@ -619,3 +618,4 @@ G:\Universiteit\Github\CMPG-323-Project-2\Project 2 Dimension Data Collab\obj\De
 G:\Universiteit\Github\CMPG-323-Project-2\Project 2 Dimension Data Collab\obj\Debug\netcoreapp3.1\Project 2(Dimension Data Collab).MvcApplicationPartsAssemblyInfo.cs
 G:\Universiteit\Github\CMPG-323-Project-2\Project 2 Dimension Data Collab\obj\Debug\netcoreapp3.1\Project 2(Dimension Data Collab).MvcApplicationPartsAssemblyInfo.cache
 G:\Universiteit\Github\CMPG-323-Project-2\Project 2 Dimension Data Collab\obj\Debug\netcoreapp3.1\Razor\Views\Administration\CreateRole.cshtml.g.cs
+G:\Universiteit\Github\CMPG-323-Project-2\Project 2 Dimension Data Collab\obj\Debug\netcoreapp3.1\Razor\Views\dataChart\_Chart3.cshtml.g.cs

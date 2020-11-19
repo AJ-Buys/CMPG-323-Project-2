@@ -11,6 +11,7 @@ using Test_Database.Models;
 
 namespace Test_Database.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         
